@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" xmlns="http://">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Bootstrap CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+	<title>ClientManagementApplication</title>
+</head>
+
+<body>
+	<div class="container my-4">
+		<div class="row">
+			<div class="col-md-8 mx-auto rounded border p-4">
+				<h2 class="text-center mb-5">Edit Client Information</h2>
+				<form method="post" th:object="${clientDto}">
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Client ID</label>
+						<div class="col-sm-8">
+							<input class="form-control-plaintext" readonly th:value="${clientDto.id}">
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">First Name</label>
+						<div class="col-sm-8">
+							<input class="form-control" th:field="${clientDto.firstName}">
+							<p th:if="${#fields.hasErrors('firstName')}" th:errorClass="text-danger"
+								th:errors="${clientDto.firstName}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Last Name</label>
+						<div class="col-sm-8">
+							<input class="form-control" th:field="${clientDto.lastName}">
+							<p th:if="${#fields.hasErrors('lastName')}" th:errorClass="text-danger"
+								th:errors="${clientDto.lastName}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Phone Number</label>
+						<div class="col-sm-8">
+							<input class="form-control" th:field="${clientDto.phone}">
+							<p th:if="${#fields.hasErrors('phone')}" th:errorClass="text-danger"
+								th:errors="${clientDto.phone}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Email</label>
+						<div class="col-sm-8">
+							<input class="form-control" th:field="${clientDto.email}">
+							<p th:if="${#fields.hasErrors('email')}" th:errorClass="text-danger"
+								th:errors="${clientDto.email}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Address</label>
+						<div class="col-sm-8">
+							<input class="form-control" th:field="${clientDto.address}">
+							<p th:if="${#fields.hasErrors('address')}" th:errorClass="text-danger"
+								th:errors="${clientDto.address}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Status</label>
+						<div class="col-sm-8">
+							<select class="form-select" th:field="${clientDto.status}">
+								<option value="New">New</option>
+								<option value="Permanent">Permanent</option>
+								<option value="Lead">Lead</option>
+								<option value="Occasional">Occasional</option>
+								<option value="InActive">InActive</option>
+							</select>
+							<p th:if="${#fields.hasErrors('status')}" th:errorClass="text-danger"
+								th:errors="${clientDto.status}"></p>
+						</div>
+					</div>
+
+					<div class="row mb-3">
+						<label class="col-sm-4 col-form-label">Created At</label>
+						<div class="col-sm-8">
+							<input class="form-control-plaintext" readonly th:value="${clientDto.createdAt}">
+						</div>
+					</div>
+					<div class="row">
+						<div class="offset-sm-4 col-sm-4 d-grid">
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+						<div class="col-sm-4 d-grid">
+							<a class="btn btn-outline-primary" href="/clients">Cancel</a>
+						</div>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
