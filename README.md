@@ -16,4 +16,4 @@ A simple web-based Client Management System built using **Spring Boot** and **RE
 - **Backend:** Java, Spring Boot, Spring Web
 - **API:** RESTful Services
 - **Frontend:** HTML/CSS (basic UI)
-- **Database:** (e.g., MySQL or H2 – mention your DB here)
+- **Database:** (e.g., MySQL )
