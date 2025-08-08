@@ -6,8 +6,8 @@ A simple web-based Client Management System built using **Spring Boot** and **RE
 
 - Add new clients
 - View all clients
-- Update client details (optional)
-- Delete client records (optional)
+- Update client details
+- Delete client records
 - RESTful API integration
 - Basic UI for interaction
 
